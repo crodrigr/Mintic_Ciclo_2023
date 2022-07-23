@@ -1,6 +1,6 @@
 # Ejercicios realizados en clase.
 
-## 1. Sevicio de Agua
+## 1. Servicio de Agua
 
 ![image](https://user-images.githubusercontent.com/31961588/180584003-c6073df8-2b64-4bb8-b204-3aac2a836208.png)
 
