@@ -288,6 +288,10 @@ public class ArregloNumeros57 {
 
 ```
 # 4. Calcular valor a pagar de servicio de teléfono
+
+![image](https://user-images.githubusercontent.com/31961588/180630091-1e89c72b-1cab-46dd-aedb-c575e9bc33b4.png)
+
+
 ```Java
 package trabajoenclase;
 
