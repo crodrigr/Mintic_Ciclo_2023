@@ -149,6 +149,7 @@ public class VendedoresWhile {
         }*/
     }
 }
+```
 
 **Otra solución**
 ```Java
@@ -191,10 +192,8 @@ public class VendoresWhile57 {
     }
 
 }
-
 ```
 
-```
 # 3.Arreglo de una dimesión. Numeros pares e impares
 
 ![image](https://user-images.githubusercontent.com/31961588/180627901-27ec2d6d-ac99-4f1a-90a9-c442f76db772.png)
