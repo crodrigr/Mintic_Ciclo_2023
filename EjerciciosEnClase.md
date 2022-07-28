@@ -359,3 +359,87 @@ public class ServicioTelefonico {
 }
 
 ```
+
+#5 POO. Cuenta Bancaria
+
+**AppCuentaBancaria**
+
+```Java
+package appcuentabancaria;
+
+public class AppCuentaBancaria {
+    
+    public static void main(String[] args) {
+        System.out.println("PROGRAMA CUENTA BANCARIA");
+        
+        CuentaBancaria cuenta1=new CuentaBancaria("001",100000.0,1);
+        CuentaBancaria cuenta2=new CuentaBancaria("002",500000.0,2);
+        CuentaBancaria cuenta3=new CuentaBancaria("001",100000.0,1);
+        CuentaBancaria cuenta4=new CuentaBancaria("003",800000.0,1);
+        
+        
+        System.out.println("Numero cuenta: "+cuenta1.numeroCuenta+" saldo:" +cuenta1.saldo+" tipo:"+cuenta1.tipoCuenta);
+        System.out.println("Numero cuenta: "+cuenta2.numeroCuenta+" saldo:" +cuenta2.saldo+" tipo:"+cuenta2.tipoCuenta);
+        System.out.println("Numero cuenta: "+cuenta3.numeroCuenta+" saldo:" +cuenta3.saldo+" tipo:"+cuenta3.tipoCuenta);
+        System.out.println("Numero cuenta: "+cuenta4.numeroCuenta+" saldo:" +cuenta4.saldo+" tipo:"+cuenta4.tipoCuenta);
+        
+        
+        cuenta1.consignar(200000);
+        cuenta3.retirar(50000);
+        
+        
+        System.out.println("Numero cuenta: "+cuenta1.numeroCuenta+" saldo:" +cuenta1.saldo+" tipo:"+cuenta1.tipoCuenta);
+        System.out.println("Numero cuenta: "+cuenta2.numeroCuenta+" saldo:" +cuenta2.saldo+" tipo:"+cuenta2.tipoCuenta);
+        System.out.println("Numero cuenta: "+cuenta3.numeroCuenta+" saldo:" +cuenta3.saldo+" tipo:"+cuenta3.tipoCuenta);
+        System.out.println("Numero cuenta: "+cuenta4.numeroCuenta+" saldo:" +cuenta4.saldo+" tipo:"+cuenta4.tipoCuenta);
+        
+        
+        
+        
+        
+        
+        
+    }
+    
+}
+
+```
+
+**CuentaBancaria**
+
+```Java
+package appcuentabancaria;
+
+public class CuentaBancaria {
+    
+    //Atributos
+    public String numeroCuenta;
+    public double saldo;
+    public int   tipoCuenta;  
+    
+    //Métodos
+    public CuentaBancaria(){
+    
+    }
+    
+    public CuentaBancaria(String numeroCuenta,double saldo,int tipoCuenta){
+       this.numeroCuenta=numeroCuenta;
+       this.saldo=saldo;
+       this.tipoCuenta=tipoCuenta;  
+    }
+    
+    public void retirar(double valor){
+        if(valor<this.saldo){
+          this.saldo-=valor;
+        }else{
+         System.out.println("Saldo insuficiente!");
+        }
+    
+    }
+    
+    public void consignar(double valor){
+       this.saldo+=valor;    
+    }
+}
+
+```
