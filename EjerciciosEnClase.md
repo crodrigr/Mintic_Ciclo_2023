@@ -360,7 +360,7 @@ public class ServicioTelefonico {
 
 ```
 
-#5 POO. Cuenta Bancaria
+# 5 POO. Cuenta Bancaria
 
 **AppCuentaBancaria**
 
@@ -392,12 +392,6 @@ public class AppCuentaBancaria {
         System.out.println("Numero cuenta: "+cuenta2.numeroCuenta+" saldo:" +cuenta2.saldo+" tipo:"+cuenta2.tipoCuenta);
         System.out.println("Numero cuenta: "+cuenta3.numeroCuenta+" saldo:" +cuenta3.saldo+" tipo:"+cuenta3.tipoCuenta);
         System.out.println("Numero cuenta: "+cuenta4.numeroCuenta+" saldo:" +cuenta4.saldo+" tipo:"+cuenta4.tipoCuenta);
-        
-        
-        
-        
-        
-        
         
     }
     
