@@ -437,7 +437,7 @@ public class CuentaBancaria {
 }
 
 ```
-# 6.Suscriptores servicio de agua con Arraylists
+# 6. Suscriptores servicio de agua con Arraylists
 
 ![image](https://user-images.githubusercontent.com/31961588/181862853-9c6a66b4-3884-421f-a465-bc5bd4e5dbf2.png)
 
