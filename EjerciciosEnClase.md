@@ -800,7 +800,7 @@ public class Estudiante {
 
 ```
 
-## 8. Publicaciones con Herencia
+# 8. Publicaciones con Herencia
 
 ![image](https://user-images.githubusercontent.com/31961588/182984854-beb38591-68e1-42f6-935d-77330447ed02.png)
 
