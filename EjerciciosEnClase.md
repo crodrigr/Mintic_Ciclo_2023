@@ -800,3 +800,248 @@ public class Estudiante {
 
 ```
 
+## 8. Publicaciones con Herencia
+
+![image](https://user-images.githubusercontent.com/31961588/182984854-beb38591-68e1-42f6-935d-77330447ed02.png)
+
+**AppPubliaciones.java**
+```Java
+
+package apppublicacion57;
+
+import java.util.Scanner;
+
+public class AppPublicacion57 {
+    
+    //Variable global 
+    static Scanner leer=new Scanner(System.in);
+    
+    
+    public static void main(String[] args) {
+        
+        Ventas ventas=new Ventas();
+        
+        System.out.println("PROGRAMA DE PUBLICACIONES CON HERENCIA \n");
+        
+        Publicacion p1=newPublicacion();
+        Publicacion p2=newPublicacion();
+        Publicacion p3=newPublicacion();
+        
+        p1.mostrar();
+        p2.mostrar();
+        p3.mostrar();
+        
+        System.out.println("\nLISTADO DE PUBLICACIONES VENDIDAS \n");
+        ventas.newVenta(p1);
+        ventas.newVenta(p3);
+        ventas.listadoVentas();
+        
+        
+    }
+    
+    public static Publicacion newPublicacion(){
+        
+        Publicacion publicacion;
+        System.out.println("Ingrese el titulo: ");
+        String titulo=leer.nextLine();
+        System.out.println("Ingrese el precio: ");
+        float precio=leer.nextFloat();
+        System.out.println("Tipo de publicacion: 0. Publicacion, 1. Libro y 2.Disco: ");
+        int tipo=leer.nextInt();
+        switch (tipo) {
+            case 1 -> {
+                System.out.println("Ingrese número de paginas: ");
+                int paginas=leer.nextInt();
+                System.out.println("Ingrese el año de publicación: ");
+                int año=leer.nextInt();
+                publicacion=new Libro(paginas,año,titulo,precio);
+            }
+            case 2 -> {
+                System.out.println("Ingrese la duración:  ");
+                float duracion=leer.nextFloat();
+                publicacion=new Disco(duracion,titulo,precio);
+            }
+            default -> publicacion=new Publicacion(titulo,precio);
+        }
+                   
+      return publicacion;
+    }
+    
+}
+
+```
+**Publicacion.java**
+```Java
+
+package apppublicacion57;
+
+
+public class Publicacion {
+    
+    private String titulo;
+    private float  precio;
+
+    public Publicacion() {
+    }
+
+    public Publicacion(String titulo, float precio) {
+        this.titulo = titulo;
+        this.precio = precio;
+    }
+    
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public float getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(float precio) {
+        this.precio = precio;
+    }
+    
+    public void mostrar(){
+      System.out.println("INFORMACIÓN DE UNA PUBLICACIÓN");
+      System.out.println("Titulo: "+this.titulo);
+      System.out.println("Precion: "+this.precio);
+    
+    }
+    
+    
+    
+    
+}
+
+```
+**Libro.java**
+```Java
+
+package apppublicacion57;
+
+
+public class Libro extends Publicacion {
+    
+    private int numeroPaginas;
+    private int añoPublicacion;
+
+    public Libro() {
+    }
+
+    public Libro(int numeroPaginas, int añoPublicacion, String titulo, float precio) {
+        super(titulo, precio);
+        this.numeroPaginas = numeroPaginas;
+        this.añoPublicacion = añoPublicacion;
+    }
+
+    public int getNumeroPaginas() {
+        return numeroPaginas;
+    }
+
+    public void setNumeroPaginas(int numeroPaginas) {
+        this.numeroPaginas = numeroPaginas;
+    }
+
+    public int getAñoPublicacion() {
+        return añoPublicacion;
+    }
+
+    public void setAñoPublicacion(int añoPublicacion) {
+        this.añoPublicacion = añoPublicacion;
+    }
+
+    @Override
+    public void mostrar() {
+        System.out.println("INFORMACIÓN DE UN LIBRO");
+        System.out.println("Titulo: " + super.getTitulo());
+        System.out.println("Precion: " + super.getPrecio());
+        System.out.println("Número de paginas: " + this.numeroPaginas);
+        System.out.println("Año de publicación: " + this.añoPublicacion);
+    }
+    
+    
+    
+    
+    
+}
+
+```
+**Disco.java**
+```Java
+package apppublicacion57;
+
+public class Disco extends Publicacion {
+
+    private float duracion;
+
+    public Disco() {
+    }
+
+    public Disco(float duracion, String titulo, float precio) {
+        super(titulo, precio);
+        this.duracion = duracion;
+    }
+
+    public float getDuracion() {
+        return duracion;
+    }
+
+    public void setDuracion(float duracion) {
+        this.duracion = duracion;
+    }
+
+    @Override
+    public void mostrar() {
+        System.out.println("INFORMACIÓN DE UN DISCO");
+        System.out.println("Titulo: " + super.getTitulo());
+        System.out.println("Precion: " + super.getPrecio());
+        System.out.println("Duración: " + this.duracion);
+
+    }
+
+}
+
+```
+
+**Venta.java**
+```Java
+
+package apppublicacion57;
+
+import java.util.ArrayList;
+
+
+public class Ventas {
+    
+    private ArrayList<Publicacion> listVentas;
+
+    public Ventas() {
+       listVentas=new ArrayList<Publicacion>();        
+    }
+
+    public ArrayList<Publicacion> getListVentas() {
+        return listVentas;
+    }
+
+    public void setListVentas(ArrayList<Publicacion> listVentas) {
+        this.listVentas = listVentas;
+    }
+    
+    public void newVenta(Publicacion publicacion){
+       this.listVentas.add(publicacion);
+    }
+    
+    public void listadoVentas(){
+       for(int i=0;i<this.listVentas.size();i++){
+          this.listVentas.get(i).mostrar();
+       }
+    }
+    
+    
+}
+
+```
