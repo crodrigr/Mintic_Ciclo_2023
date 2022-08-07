@@ -1045,3 +1045,239 @@ public class Ventas {
 }
 
 ```
+# 9 Figuras aplicando herencia y polimorfismo. 
+
+![image](https://user-images.githubusercontent.com/31961588/183270157-19f2d746-d185-444f-941d-83e146a07156.png)
+
+
+**AppFigura.java**
+```JAva
+
+package appfigura;
+
+
+public class AppFigura {
+
+    
+    public static void main(String[] args) {
+        
+        Figura f1=new Cuadrado(5);
+        Figura f2=new Rectangulo(3,9);
+        Figura f3=new Circulo(9);
+        
+        f1.calcularArea();
+        f1.calcularPerimetro();
+        f1.mostrar();
+        
+        f2.calcularArea();
+        f2.calcularPerimetro();
+        f2.mostrar();
+        
+        f3.calcularArea();
+        f3.calcularPerimetro();
+        f3.mostrar();
+        
+       
+    }
+    
+}
+
+```
+**Figura.java**
+```JAva
+
+package appfigura;
+
+
+public abstract class Figura {
+    
+    private float area;
+    private float perimetro;
+
+    public Figura() {
+    }
+    
+    public Figura(float area, float perimetro) {
+        this.area = area;
+        this.perimetro = perimetro;
+    }
+
+    public float getArea() {
+        return area;
+    }
+
+    public void setArea(float area) {
+        this.area = area;
+    }
+
+    public float getPerimetro() {
+        return perimetro;
+    }
+
+    public void setPerimetro(float perimetro) {
+        this.perimetro = perimetro;
+    }
+    
+    public abstract void calcularArea();
+    
+    public abstract void calcularPerimetro();
+    
+    public abstract void mostrar();
+          
+    
+}
+
+
+```
+**Cuadrado.java**
+```JAva
+
+package appfigura;
+
+
+public class Cuadrado extends Figura {
+    
+    private float lado;
+    
+
+    public Cuadrado(float lado) {
+        this.lado = lado;
+    }  
+    
+
+    public float getLado() {
+        return lado;
+    }
+
+    public void setLado(float lado) {
+        this.lado = lado;
+    }
+       
+
+    @Override
+    public void calcularArea() {
+        float area=this.lado*this.lado;
+        super.setArea(area);
+    }
+
+    @Override
+    public void calcularPerimetro() {
+        float perimetro=this.lado*4;
+        super.setPerimetro(perimetro);
+    }
+
+    @Override
+    public void mostrar(){
+       System.out.println("DATOS DEL CUADRADO");
+       System.out.println("Lado: "+this.lado);
+       System.out.println("Area:" +super.getArea());
+       System.out.println("Perimetro: "+super.getPerimetro());
+    }
+    
+}
+
+```
+
+**Rectangulo.java**
+```JAva
+
+package appfigura;
+
+public class Rectangulo extends Figura {
+    
+    private float base;
+    private float altura;
+
+    public Rectangulo(float base, float altura) {
+        this.base = base;
+        this.altura = altura;
+    }
+
+    public float getBase() {
+        return base;
+    }
+
+    public void setBase(float base) {
+        this.base = base;
+    }
+
+    public float getAltura() {
+        return altura;
+    }
+
+    public void setAltura(float altura) {
+        this.altura = altura;
+    }
+    
+    @Override
+    public void calcularArea() {
+        float area=this.base*this.altura;
+        super.setArea(area);
+    }
+
+    @Override
+    public void calcularPerimetro() {
+        float perimetro=2*this.base+2*this.altura;
+        super.setPerimetro(perimetro);
+    }
+
+    @Override
+    public void mostrar() {
+       System.out.println("DATOS DEL RECTANGULO");
+       System.out.println("Base: "+this.base);
+       System.out.println("Altura: "+this.altura);
+       System.out.println("Area:" +super.getArea());
+       System.out.println("Perimetro: "+super.getPerimetro());
+    }
+    
+}
+
+```
+**Circulo.java**
+```JAva
+
+package appfigura;
+
+
+public class Circulo extends Figura {
+    
+    private float radio;
+
+    public Circulo(float radio) {
+        this.radio = radio;
+    }
+
+    public float getRadio() {
+        return radio;
+    }
+
+    public void setRadio(float radio) {
+        this.radio = radio;
+    }
+    
+    
+    @Override
+    public void calcularArea() {
+       float area=(float) (2*Math.PI*(this.radio*this.radio));
+       super.setArea(area);
+    }
+
+    @Override
+    public void calcularPerimetro() {
+       float perimetro=(float) (2*Math.PI*this.radio);
+       super.setPerimetro(perimetro);
+    }
+
+    @Override
+    public void mostrar() {
+       System.out.println("DATOS DEL CIRCULO");
+       System.out.println("Radio: "+this.radio);       
+       System.out.println("Area:" +super.getArea());
+       System.out.println("Perimetro: "+super.getPerimetro());
+    }
+    
+    
+    
+}
+
+```
