@@ -13,6 +13,9 @@
 
 ![image](https://user-images.githubusercontent.com/31961588/185528848-26c4cb49-67d5-4bc4-a594-f4d1fd1665c0.png)
 
+# 4. Método mostrar en el JFrame que inserta los datos de los docentes en el JTable
+
+![image](https://user-images.githubusercontent.com/31961588/185529178-194fcff7-76f8-4135-bcbf-e912a38d70e2.png)
 
 
 
